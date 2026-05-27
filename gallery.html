@@ -4,36 +4,94 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gallery | Bryce Vitale</title>
+  <meta name="description" content="Gallery for Bryce Vitale featuring personal interests and professional moments." />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">Bryce Vitale</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-          <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
+  <!-- gallery page -->
+  <!-- ** skip link ** -->
+  <a class="visually-hidden-focusable skip-link" href="#main-content">Skip to main content</a>
+  <div class="page-shell">
+    <!-- ** top nav ** -->
+    <nav class="topbar">
+      <div class="brand-row">
+        <a class="brand" href="index.html">Bryce Vitale</a>
+        <span class="brand-tag">Gallery</span>
       </div>
+      <ul class="nav-links">
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link" href="about.html">About</a></li>
+        <li><a class="nav-link" href="projects.html">Projects</a></li>
+        <li><a class="nav-link active" href="gallery.html">Gallery</a></li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+      <button class="btn btn-ghost auth-btn" id="authToggle" type="button">Verify Access</button>
+    </nav>
+
+    <main id="main-content" class="content-shell">
+      <!-- ** header ** -->
+      <section class="page-header">
+        <span class="eyebrow">Gallery</span>
+        <h1>Gallery</h1>
+        <p class="hero-lead">A few snapshots from hockey, music, and team projects.</p>
+      </section>
+
+      <!-- ** gallery images ** -->
+      <section class="gallery-grid">
+        <figure class="gallery-item">
+          <img src="images/gallery1.jpeg" alt="Music Band" />
+          <figcaption>Hockey clears my head.</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/gallery2.jpeg" alt="Hockey" />
+          <figcaption>Music is my reset button.</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="images/gallery3.jpeg" alt="Team Project" />
+          <figcaption>Giving back to the community.</figcaption>
+        </figure>
+      </section>
+
+      <!-- ** locked section ** -->
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Extra notes</h2>
+          <p>Verify access to reveal a short note.</p>
+        </div>
+        <div class="auth-panel" id="authPanel">
+          <div class="panel-card">
+            <h3>Locked</h3>
+            <p>Click “Verify Access” to unlock the extra note.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ** footer ** -->
+    <footer class="site-footer">&copy; 2026 Bryce Vitale</footer>
+  </div>
+
+  <!-- ** verify access modal ** -->
+  <div class="modal-overlay hidden" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
+    <div class="modal-card">
+      <div class="modal-card-header">
+        <h2 id="authModalTitle">Authentication required</h2>
+        <p>Enter the passphrase to unlock.</p>
+      </div>
+      <form id="authForm" class="auth-form">
+        <label class="form-label" for="authInput">Passphrase</label>
+        <input class="form-control" id="authInput" type="password" autocomplete="current-password" required />
+        <div class="modal-actions">
+          <button class="btn btn-primary" type="submit">Unlock</button>
+          <button class="btn btn-ghost" type="button" id="authClose">Cancel</button>
+        </div>
+        <p class="hint">Frontend demo only.</p>
+      </form>
     </div>
-  </nav>
-  <main class="container py-5">
-    <h1>Gallery</h1>
-    <p class="mb-4">Here are some snapshots of things I love. From hockey and music, to team projects and adventures.</p>
-    <div class="row g-3">
-      <div class="col-md-4"><img src="images/gallery2.jpeg" class="img-fluid rounded" alt="Hockey"></div>
-      <div class="col-md-4"><img src="images/gallery1.jpeg" class="img-fluid rounded" alt="Music Band"></div>
-      <div class="col-md-4"><img src="images/gallery3.jpeg" class="img-fluid rounded" alt="Team Project"></div>
-    </div>
-  </main>
-  <footer class="bg-dark text-white text-center py-3">&copy; 2025 Bryce Vitale</footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

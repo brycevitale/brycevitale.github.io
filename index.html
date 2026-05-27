@@ -4,39 +4,121 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home | Bryce Vitale</title>
+  <meta name="description" content="Home page for Bryce Vitale. Cybersecurity and software engineering." />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">Bryce Vitale</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
+  <!-- home page -->
+  <!-- ** skip link ** -->
+  <a class="visually-hidden-focusable skip-link" href="#main-content">Skip to main content</a>
+  <div class="page-shell">
+    <!-- ** top nav ** -->
+    <nav class="topbar">
+      <div class="brand-row">
+        <a class="brand" href="index.html">Bryce Vitale</a>
+        <span class="brand-tag">Cybersecurity M.S.</span>
       </div>
+      <ul class="nav-links">
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link" href="about.html">About</a></li>
+        <li><a class="nav-link" href="projects.html">Projects</a></li>
+        <li><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+      <button class="btn btn-ghost auth-btn" id="authToggle" type="button">Verify Access</button>
+    </nav>
+
+    <main id="main-content">
+      <!-- ** hero ** -->
+      <section class="hero-section">
+        <div class="hero-grid"></div>
+        <div class="hero-copy">
+          <span class="eyebrow">Cybersecurity + Software Engineering</span>
+          <h1>Hi, I’m Bryce Vitale.</h1>
+          <p class="hero-lead">Computer Science B.S. • Cybersecurity M.S. • Software Engineer • Startup Co-Founder</p>
+          <p class="hero-quote" data-typing="If you never stop learning, you will never stop growing."></p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="about.html">Explore my story</a>
+            <button class="btn btn-secondary" id="authOpen" type="button">Unlock extra notes</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ** quick cards ** -->
+      <section class="feature-grid">
+        <article class="glass-card">
+          <h2>What I build</h2>
+          <p>Backend services, APIs, and automated pipelines. I like projects that actually run outside my laptop.</p>
+        </article>
+        <article class="glass-card">
+          <h2>What I’m into</h2>
+          <p>Post-quantum cryptography, securing AI systems, and "how do we deploy this safely" side of cybersecurity.</p>
+        </article>
+        <article class="glass-card">
+          <h2>Start here</h2>
+          <p>Projects + papers </p>
+          <a class="btn btn-ghost mt-3" href="#papers">View my papers</a>
+        </article>
+      </section>
+
+      <!-- ** writing samples ** -->
+      <section class="panel" id="papers">
+        <div class="panel-header">
+          <h2>Writing Samples</h2>
+          <p>Two writing samples (both PDF).</p>
+        </div>
+        <div class="auth-panel">
+          <div class="panel-card">
+            <h3>Post-Quantum TLS Under Pressure (M.S. Thesis)</h3>
+            <p><a class="btn btn-primary" href="papers/Post_Quantum_TLS_Under_Pressure_Thesis.pdf" target="_blank" rel="noopener">Open thesis (PDF)</a></p>
+          </div>
+          <div class="panel-card">
+            <h3>Quantum Computing + Encryption (IEEE Paper)</h3>
+            <p><a class="btn btn-primary" href="papers/Quantum_Encryption_Hybrid_Paper.pdf" target="_blank" rel="noopener">Open paper (PDF)</a></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ** locked section ** -->
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Access</h2>
+          <p>Verify Access to continue.</p>
+        </div>
+        <div class="auth-panel" id="authPanel">
+          <div class="panel-card">
+            <h3>Locked</h3>
+            <p>Enter the passphrase to unlock.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ** footer ** -->
+    <footer class="site-footer">&copy; 2026 Bryce Vitale. All rights reserved.</footer>
+  </div>
+
+  <!-- ** verify access modal ** -->
+  <div class="modal-overlay hidden" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
+    <div class="modal-card">
+      <div class="modal-card-header">
+        <h2 id="authModalTitle">Authentication required</h2>
+        <p>Enter the passphrase to unlock.</p>
+      </div>
+      <form id="authForm" class="auth-form">
+        <label class="form-label" for="authInput">Passphrase</label>
+        <input class="form-control" id="authInput" type="password" autocomplete="current-password" required />
+        <div class="modal-actions">
+          <button class="btn btn-primary" type="submit">Unlock</button>
+          <button class="btn btn-ghost" type="button" id="authClose">Cancel</button>
+        </div>
+        <p class="hint">Access is stored in this browser.</p>
+      </form>
     </div>
-  </nav>
-  <header class="text-center py-5 bg-light">
-  <img src="images/profile.jpg" class="rounded-circle" width="150" alt="Profile picture of Bryce Vitale" />
-    <h1 class="mt-3">Bryce Vitale</h1>
-    <p class="lead">Computer Science B.S. & Cybersecurity MS Student | IT Consultant | Startup Co-Founder</p>
-  </header>
-  <main class="container text-center py-4">
-    <h2>Welcome!</h2>
-    <p>My name is Bryce Vitale, a technology enthusiast passionate about secure systems, innovation, and problem solving. Whether it is leading IT deployments, launching campus startups, or creating music, I bring energy and curiosity to everything I do.</p>
-  </main>
-  <footer class="bg-dark text-white text-center py-3">&copy; 2025 Bryce Vitale. All rights reserved.</footer>
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="script.js"></script>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

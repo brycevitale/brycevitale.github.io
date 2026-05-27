@@ -4,33 +4,137 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Bryce Vitale</title>
+  <meta name="description" content="About Bryce Vitale — software engineer focused on cybersecurity, backend systems, and building real products." />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">Bryce Vitale</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
+  <!-- about page -->
+  <!-- ** skip link ** -->
+  <a class="visually-hidden-focusable skip-link" href="#main-content">Skip to main content</a>
+  <div class="page-shell">
+    <!-- ** top nav ** -->
+    <nav class="topbar">
+      <div class="brand-row">
+        <a class="brand" href="index.html">Bryce Vitale</a>
+        <span class="brand-tag">Cybersecurity M.S.</span>
       </div>
+      <ul class="nav-links">
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link active" href="about.html">About</a></li>
+        <li><a class="nav-link" href="projects.html">Projects</a></li>
+        <li><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+      <button class="btn btn-ghost auth-btn" id="authToggle" type="button">Verify Access</button>
+    </nav>
+
+    <main id="main-content" class="content-shell">
+      <!-- ** header ** -->
+      <section class="page-header">
+        <div>
+          <span class="eyebrow">A little about me</span>
+          <h1>About</h1>
+          <p class="hero-lead">I built this site in VS Code using HTML, CSS, and JavaScript.</p>
+        </div>
+      </section>
+
+      <!-- ** main content ** -->
+      <section class="stacked-grid">
+        <article class="panel glass-card">
+          <h2>Introduction</h2>
+          <p>Hello, I’m Bryce. I built this website to use as a resume + project hub. I kept it simple and focused on clean structure and a solid UI.</p>
+          <h3>Background</h3>
+          <p>I earned my <strong>B.S. in Computer Science</strong> from Fordham University and I completed my <strong>M.S. in Cybersecurity</strong> in <time datetime="2026-05">May 2026</time>.</p>
+          <p>I have been a Software Engineering intern at <strong>American IT Solutions</strong> since 2022, where I have gained hands on experiences with server infrastructure and full-stack application development.</p>
+          <p>In my free time I really enjoy building side projects. One of my longer term projects is an indexing platform for a startup called <strong>Myrtle Equities</strong>, where I have been designing and implementing backend services that ingest, store, and serve market data to private clients.</p>
+          <p>During my four years in undergrad I co-founded <strong>DormDirect</strong>, which is an inter-campus food delivery service. That experience taught me what it takes to build a product and a company from the ground up.</p>
+        </article>
+
+        <article class="panel glass-card">
+          <h2>Interests</h2>
+          <p>Outside of day to day development, I’m into <strong>quantum computing</strong> and what it means for modern encryption. I like the practical side of it: how companies actually migrate to post-quantum security.</p>
+          <p>I’m also a lifelong hockey player and a band frontman. Hockey taught me how to show up for a team. Music is how I reset.</p>
+          <details class="details-panel">
+            <summary>What I focus on when I build</summary>
+            <ul>
+              <li><strong>Semantic HTML</strong> and clean easy-to-follow code structure.</li>
+              <li><strong>Performance</strong>: fast loads, minimal bloat, responsive layouts.</li>
+              <li><strong>Security</strong>: least privilege and secure data handling.</li>
+              <li><strong>Real deployment</strong>: projects should run outside my local development environment.</li>
+            </ul>
+          </details>
+        </article>
+      </section>
+
+      <!-- ** quick facts ** -->
+      <aside class="info-panel glass-card">
+        <div>
+          <h2>Quick facts</h2>
+          <dl>
+            <div>
+              <dt>Location</dt>
+              <dd>New York, NY</dd>
+            </div>
+            <div>
+              <dt>Degrees</dt>
+              <dd>Computer Science • Cybersecurity</dd>
+            </div>
+            <div>
+              <dt>Skills</dt>
+              <dd>Python • C++ • Linux • HTML/CSS/JS • SQL • Cloud Infrastructure</dd>
+            </div>
+            <div>
+              <dt>Current projects</dt>
+              <dd>Indexing platform • Employee portal • Post Quantum TLS</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="quote-block">
+          <p>"Make it work. Then lock it down.”</p>
+          <span>Bryce’s rule of thumb</span>
+        </div>
+      </aside>
+
+      <!-- ** locked section ** -->
+      <section class="panel">
+        <div class="panel-header">
+          <h2>Access</h2>
+          <p>Verify Access to continue.</p>
+        </div>
+        <div class="auth-panel" id="authPanel">
+          <div class="panel-card">
+            <h3>Locked</h3>
+            <p>Enter the passphrase to unlock.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ** footer ** -->
+    <footer class="site-footer">&copy; 2026 Bryce Vitale</footer>
+  </div>
+
+  <!-- ** verify access modal ** -->
+  <div class="modal-overlay hidden" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
+    <div class="modal-card">
+      <div class="modal-card-header">
+        <h2 id="authModalTitle">Authentication required</h2>
+        <p>Enter the passphrase to unlock.</p>
+      </div>
+      <form id="authForm" class="auth-form">
+        <label class="form-label" for="authInput">Passphrase</label>
+        <input class="form-control" id="authInput" type="password" autocomplete="current-password" required />
+        <div class="modal-actions">
+          <button class="btn btn-primary" type="submit">Unlock</button>
+          <button class="btn btn-ghost" type="button" id="authClose">Cancel</button>
+        </div>
+        <p class="hint">Access is stored in this browser.</p>
+      </form>
     </div>
-  </nav>
-  <main class="container py-5">
-    <h1>About Me</h1>
-    <p>Hi! I am currently completing my B.S. in Computer Science while pursuing a Master’s in Cybersecurity at Fordham University. I thrive in fast paced environments that require initiative and critical thinking with a team.</p>
-    <p>I have worked as an IT Project Consultant at American IT Solutions since 2021, where I mainly manage B2B hardware deployments. I also develop automation scripts and coordinate operations to ensure timely delivery. Additionally, I co-founded DormDirect, an on-campus food delivery service where I thrived in development of the company along with marketing and logistics for a student run team.</p>
-    <p>Outside of tech, I am an avid hockey player, band frontman, and Orientation Captain. I enjoy leading my community both on and off campus. From music to machine learning, I am always looking for opportunities to grow and make an impact.</p>
-  </main>
-  <footer class="bg-dark text-white text-center py-3">&copy; 2025 Bryce Vitale</footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
