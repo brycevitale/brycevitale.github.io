@@ -1,6 +1,17 @@
 // frontend authentication demo (NOT real security)
 // just a UI lock/unlock so employers can click around
 
+// ** old website redirect **
+// redirect visitors from my old GitHub Pages address
+if (window.location.hostname === 'brycevitale.github.io') {
+  window.location.replace(
+    'https://brycevitale.com' +
+    window.location.pathname +
+    window.location.search +
+    window.location.hash
+  );
+}
+
 // ** constants / stored values **
 const AUTH_KEY = 'bv-authenticated'; // key name I use in localStorage to remember “unlocked” state
 
